@@ -4,7 +4,7 @@ const path = require('path');
 const destDir = path.join(__dirname, 'files-copy');
 const sourceDir = path.join(__dirname, 'files');
 
-fs.rmdir(destDir, {recursive: true}, (err) => {
+fs.rm(destDir, {recursive: true, force: true}, (err) => {
   if (err) {
     return console.error(err);
   }

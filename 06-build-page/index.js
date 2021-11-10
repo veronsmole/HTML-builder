@@ -53,7 +53,7 @@ async function buildHtml() {
 
 async function cleanup(destDir) {
   return new Promise((resolve, reject) => {
-    fs.rmdir(destDir, {recursive: true}, (err) => {
+    fs.rm(destDir, {recursive: true, force: true}, (err) => {
       if (err) {
         reject(err);
         return;
